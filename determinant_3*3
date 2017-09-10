@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int A[3][3],i,j,cofac1,cofac2,cofac3,result;
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&A[i][j]);
+        }
+    }
+    cofac1= A[0][0]*(A[1][1]*A[2][2] - A[1][2]*A[2][1]);
+
+    cofac2= A[0][1]*(A[1][0]*A[2][2] - A[1][2]*A[2][0]);
+
+    cofac3= A[0][2]*(A[1][0]*A[2][1] - A[1][1]*A[2][0]);
+
+    result = cofac1 - cofac2 + cofac3;
+    printf("Determinant of given matrix is %d",result);
+
+    if(result==0)
+    {
+        printf("\nIt is a singular matrix.");
+    }
+    else
+    {
+        printf("\nIt is a non singular matrix.");
+    }
+    return 0;
+}
